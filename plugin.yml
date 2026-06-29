@@ -1,0 +1,65 @@
+name: CWFire
+version: ${project.version}
+main: ru.cwfire.CWFirePlugin
+api-version: '1.21'
+description: Система пожарной сигнализации для Minecraft
+authors: [CWFire Team]
+website: https://github.com/cwfire/cwfire
+
+commands:
+  cwfire:
+    description: Главная команда плагина CWFire
+    usage: /cwfire <подкоманда> [аргументы]
+    aliases: [fire, cw]
+    permission: cwfire.use
+
+permissions:
+  cwfire.use:
+    description: Базовое использование плагина
+    default: true
+
+  cwfire.give:
+    description: Выдача устройств
+    default: op
+
+  cwfire.place:
+    description: Установка устройств
+    default: op
+
+  cwfire.link:
+    description: Связывание устройств
+    default: op
+
+  cwfire.alarm:
+    description: Управление тревогой
+    default: op
+
+  cwfire.admin:
+    description: Административные команды
+    default: op
+
+  cwfire.reload:
+    description: Перезагрузка конфига
+    default: op
+
+  cwfire.building.create:
+    description: Создание зданий
+    default: op
+
+  cwfire.building.delete:
+    description: Удаление зданий
+    default: op
+
+  cwfire.*:
+    description: Все права CWFire
+    default: op
+    children:
+      cwfire.use: true
+      cwfire.give: true
+      cwfire.place: true
+      cwfire.link: true
+      cwfire.alarm: true
+      cwfire.admin: true
+      cwfire.reload: true
+      cwfire.building.create: true
+      cwfire.building.delete: true
